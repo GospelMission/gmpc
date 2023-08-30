@@ -35,11 +35,14 @@ function NavBar() {
             <Link to="/guide" onClick={() => setIsOpen(false)}>Discipleship Guide</Link>
         </nav>
     </div>
-
+    <div className={isOpen ? 'hide' : ''}>
       <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route path="/guide" element={<DiscipleshipGuide />} />
+
+          <Route exact path="/" element={<Home />} />
+          <Route path="/guide" element={<DiscipleshipGuide />} />
+
       </Routes>
+      </div>
   </>
   )
 }
