@@ -22,8 +22,8 @@ function NavBar() {
           <span className='website-name'>Logo Here</span>
           <button className='nav-btn' onClick={handleClick}><FaBars className='nav-icon'/></button>
           <nav className={isOpen ? 'nav-links' : 'hide'}>
-              <Link to="/gmpc/home" onClick={() => setIsMenuOpen(false)}>Start Here</Link>
-              <Link to="/gmpc/guide" onClick={() => setIsMenuOpen(false)}>Discipleship Guide</Link>
+              <Link to="/authentik/" onClick={() => setIsMenuOpen(false)}>Start Here</Link>
+              <Link to="/authentik/blog" onClick={() => setIsMenuOpen(false)}>Discipleship Guide</Link>
           </nav>
       </header>
     </div>
@@ -31,14 +31,14 @@ function NavBar() {
     <div className={isOpen ? 'mobile-nav-links' : 'hide'}>
         <nav>
             <button className='nav-btn' onClick={handleClick}><FaTimes className='nav-icon'/></button>
-            <Link to="/gmpc/home" onClick={() => setIsMenuOpen(false)}>Start Here</Link>
-            <Link to="/gmpc/guide" onClick={() => setIsMenuOpen(false)}>Discipleship Guide</Link>
+            <Link to="/authentik/" onClick={() => setIsMenuOpen(false)}>Start Here</Link>
+            <Link to="/authentik/blog" onClick={() => setIsMenuOpen(false)}>Discipleship Guide</Link>
         </nav>
     </div>
 
       <Routes>
-          <Route index path="/gmpc/home" element={<Home />}/>
-          <Route path="/gmpc/guide" element={<DiscipleshipGuide />}/>
+        <Route path="/authentik/" element={<Home />} />
+        <Route path="/authentik/blog" element={<DiscipleshipGuide />} />
       </Routes>
   </>
   )
