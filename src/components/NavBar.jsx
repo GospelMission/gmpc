@@ -31,14 +31,14 @@ function NavBar() {
     <div className={isOpen ? 'mobile-nav-links' : 'hide'}>
         <nav>
             <button className='nav-btn' onClick={handleClick}><FaTimes className='nav-icon'/></button>
-            <Link to="/" onClick={() => setIsMenuOpen(false)}>Start Here</Link>
-            <Link to="/guide/" onClick={() => setIsMenuOpen(false)}>Discipleship Guide</Link>
+            <Link to="/#/" onClick={() => setIsMenuOpen(false)}>Start Here</Link>
+            <Link to="/#/guide/" onClick={() => setIsMenuOpen(false)}>Discipleship Guide</Link>
         </nav>
     </div>
 
       <Routes>
-          <Route index path="/" element={<Home />}/>
-          <Route path="/guide/" element={<DiscipleshipGuide />}/>
+          <Route index path="/#/" element={<Home />}/>
+          <Route path="/#/guide/" element={<DiscipleshipGuide />}/>
       </Routes>
    
   </>
