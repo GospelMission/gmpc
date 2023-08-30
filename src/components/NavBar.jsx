@@ -23,7 +23,7 @@ function NavBar() {
           <button className='nav-btn' onClick={handleClick}><FaBars className='nav-icon'/></button>
           <nav className={isOpen ? 'nav-links' : 'hide'}>
               <Link to="/" onClick={() => setIsMenuOpen(false)}>Start Here</Link>
-              <Link to="guide" onClick={() => setIsMenuOpen(false)}>Discipleship Guide</Link>
+              <Link to="/page/guide" onClick={() => setIsMenuOpen(false)}>Discipleship Guide</Link>
           </nav>
       </header>
     </div>
@@ -32,13 +32,13 @@ function NavBar() {
         <nav>
             <button className='nav-btn' onClick={handleClick}><FaTimes className='nav-icon'/></button>
             <Link to="/" onClick={() => setIsMenuOpen(false)}>Start Here</Link>
-            <Link to="guide" onClick={() => setIsMenuOpen(false)}>Discipleship Guide</Link>
+            <Link to="/page/guide" onClick={() => setIsMenuOpen(false)}>Discipleship Guide</Link>
         </nav>
     </div>
 
       <Routes>
           <Route index path="/" element={<Home />}/>
-          <Route path="guide" element={<DiscipleshipGuide />}/>
+          <Route path="/page/guide" element={<DiscipleshipGuide />}/>
       </Routes>
   </>
   )
