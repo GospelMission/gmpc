@@ -10,7 +10,13 @@ function OneToOne(props) {
 
         <div className={props.isOpen ? 'expandable-content' : 'hide'}>
             <div className='content-text'>
-              <span>Download: <a href='https://drive.google.com/file/d/1LD-aUwqx9zALfmC91NEpN6s53e90Pgp6/view?usp=drive_link'>One to One</a></span>
+              <span>Download: 
+                <a 
+                  target='_blank'
+                  href='https://drive.google.com/file/d/1LD-aUwqx9zALfmC91NEpN6s53e90Pgp6/view?usp=drive_link'>
+                  One to One
+                </a>
+              </span>
             </div>
         </div>
 
