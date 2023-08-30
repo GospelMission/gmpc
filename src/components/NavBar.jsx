@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Link, Route, Routes} from 'react-router-dom'
+import { Link, Route, Routes } from "react-router-dom"
 import { FaBars, FaTimes } from "react-icons/fa"
 import Home from './pages/Home'
 import DiscipleshipGuide from "./pages/DiscipleshipGuide"
@@ -38,7 +38,7 @@ function NavBar() {
 
       <Routes>
         <Route exact path="/" element={<Home />} />
-        <Route path="/guide" element={<DiscipleshipGuide />} />
+        <Route exact path="/guide" element={<DiscipleshipGuide />} />
       </Routes>
   </>
   )
