@@ -22,8 +22,8 @@ function NavBar() {
           <span className='website-name'>Logo Here</span>
           <button className='nav-btn' onClick={handleClick}><FaBars className='nav-icon'/></button>
           <nav className={isOpen ? 'nav-links' : 'hide'}>
-              <Link to="/" onClick={() => setIsMenuOpen(false)}>Start Here</Link>
-              <Link to="/guide" onClick={() => setIsMenuOpen(false)}>Discipleship Guide</Link>
+              <Link to="/gmpc/home" onClick={() => setIsMenuOpen(false)}>Start Here</Link>
+              <Link to="/gmpc" onClick={() => setIsMenuOpen(false)}>Discipleship Guide</Link>
           </nav>
       </header>
     </div>
@@ -31,7 +31,7 @@ function NavBar() {
     <div className={isOpen ? 'mobile-nav-links' : 'hide'}>
         <nav>
             <button className='nav-btn' onClick={handleClick}><FaTimes className='nav-icon'/></button>
-            <Link to="/" onClick={() => setIsMenuOpen(false)}>Start Here</Link>
+            <Link to="/gmpc/home" onClick={() => setIsMenuOpen(false)}>Start Here</Link>
             <Link to="/gmpc/" onClick={() => setIsMenuOpen(false)}>Discipleship Guide</Link>
         </nav>
     </div>
