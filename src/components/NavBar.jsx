@@ -22,8 +22,8 @@ function NavBar() {
           <span className='website-name'>Logo Here</span>
           <button className='nav-btn' onClick={handleClick}><FaBars className='nav-icon'/></button>
           <nav className={isOpen ? 'nav-links' : 'hide'}>
-              <Link to="/gmpc/home" onClick={() => setIsMenuOpen(false)}>Start Here</Link>
-              <Link to="/gmpc" onClick={() => setIsMenuOpen(false)}>Discipleship Guide</Link>
+              <Link to="/" onClick={() => setIsOpen(false)}>Start Here</Link>
+              <Link to="/guide" onClick={() => setIsOpen(false)}>Discipleship Guide</Link>
           </nav>
       </header>
     </div>
@@ -31,14 +31,14 @@ function NavBar() {
     <div className={isOpen ? 'mobile-nav-links' : 'hide'}>
         <nav>
             <button className='nav-btn' onClick={handleClick}><FaTimes className='nav-icon'/></button>
-            <Link to="/gmpc/home" onClick={() => setIsMenuOpen(false)}>Start Here</Link>
-            <Link to="/gmpc/" onClick={() => setIsMenuOpen(false)}>Discipleship Guide</Link>
+            <Link to="/" onClick={() => setIsOpen(false)}>Start Here</Link>
+            <Link to="/guide" onClick={() => setIsOpen(false)}>Discipleship Guide</Link>
         </nav>
     </div>
 
       <Routes>
-        <Route path="/gmpc/home" element={<Home />} />
-        <Route path="/gmpc/" element={<DiscipleshipGuide />} />
+        <Route exact path="/" element={<Home />} />
+        <Route path="/guide" element={<DiscipleshipGuide />} />
       </Routes>
   </>
   )
