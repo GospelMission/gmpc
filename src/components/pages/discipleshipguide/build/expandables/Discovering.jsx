@@ -3,7 +3,7 @@ import React from 'react'
 function Discovering(props) {
   return (
     <>  
-        <div className='expandable-title white' onClick={props.handleClick}>
+        <div className='expandable-title whitesmoke' onClick={props.handleClick}>
             <p>Discovering of 4Ps/4Ms</p>
             {props.img}
         </div>

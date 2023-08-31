@@ -1,11 +1,12 @@
 import React from 'react'
+import DGGuideSection from './home/DGGuideSection'
 
 
 function Home() {
   return (
-    <>
-      <div>Home</div>
-    </>
+    <div>
+      <DGGuideSection />
+    </div>
   )
 }
 

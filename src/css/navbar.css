@@ -53,7 +53,6 @@ header {
 }
 
 .mobile-nav-links > nav > a:nth-child(even) {
-    color: white;
-    background-color: black;
+    background-color: white;
 }
 
