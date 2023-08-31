@@ -3,6 +3,7 @@ import { Link, Route, Routes } from "react-router-dom"
 import { FaBars, FaTimes } from "react-icons/fa"
 import Home from './pages/Home'
 import DiscipleshipGuide from "./pages/DiscipleshipGuide"
+import MissionVision from './pages/MissionVision'
 
 function NavBar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -24,6 +25,7 @@ function NavBar() {
           <nav className={isOpen ? 'nav-links' : 'hide'}>
               <Link to="/" onClick={() => setIsOpen(false)}>Home</Link>
               <Link to="/guide" onClick={() => setIsOpen(false)}>Discipleship Guide</Link>
+              <Link to="/commitments" onClick={() => setIsOpen(false)}>Mission and Vision</Link>
           </nav>
       </header>
     </div>
@@ -33,6 +35,7 @@ function NavBar() {
             {/* <button className='nav-btn' onClick={handleClick}><FaTimes className='nav-icon'/></button> */}
             <Link to="/" onClick={() => setIsOpen(false)}>Home</Link>
             <Link to="/guide" onClick={() => setIsOpen(false)}>Discipleship Guide</Link>
+            <Link to="/commitments" onClick={() => setIsOpen(false)}>Mission and Vision</Link>
         </nav>
     </div>
     <div className={isOpen ? 'hide' : ''}>
@@ -40,7 +43,7 @@ function NavBar() {
 
           <Route exact path="/" element={<Home />} />
           <Route path="/guide" element={<DiscipleshipGuide />} />
-
+          <Route path="/commitments" element={<MissionVision />} />
       </Routes>
       </div>
   </>

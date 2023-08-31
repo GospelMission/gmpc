@@ -46,6 +46,7 @@ header {
     text-decoration: none;
     color: inherit;
     font-weight: bold;
+    border: 1px solid gainsboro;
 }
 
 .mobile-nav-links > nav > a:nth-child(odd) {

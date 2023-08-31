@@ -9,20 +9,22 @@ function Discovering(props) {
         </div>
 
         <div className={props.isOpen ? 'expandable-content' : 'hide'}>
-            <div className='content-text'>
-                <p>Week 1 - Discovering Church Membership</p>
-                <p>Week 2 - Discovering Spiritual Maturity</p>
-                <p>Week 3 - Discovering my Ministry</p>
-                <p>Week 4 - Discovering my Life Mission</p>
+            <div className='content-text discovering-text'>
+                <a target='_blank'
+                   href='https://drive.google.com/file/d/1Snx-xGkbRNEgID9fjyrHD5jQDyBZD6bv/view?usp=drive_link'>
+                Week 1 - Discovering Church Membership</a>
+                <a target='_blank'
+                   href='https://drive.google.com/file/d/1mXZ9mXHXAX0VhhUhqsngzADZq7bJwrIn/view?usp=drive_link'>
+                Week 2 - Discovering Spiritual Maturity</a>
+                <a target='_blank'
+                   href='https://drive.google.com/file/d/1VZlpZ1OFqcG_IcpfxqyrCtpXL76zopOa/view?usp=drive_link'>
+                Week 3 - Discovering my Ministry</a>
+                <a target='_blank'
+                   href='https://drive.google.com/file/d/1GuNC3HlM0g_wTkGHY3QiYtPxH3h-G-Pa/view?usp=drive_link'>
+                Week 4 - Discovering my Life Mission</a>
+
             </div>
-            <div className='center'>
-                <p>Download:</p>
-                <a 
-                    target='_blank'
-                    href=''>
-                    DiscoveringOf4Ps/4Ms.pdf (Not Yet Downloadable)
-                </a>
-            </div>
+
         </div>
     </>     
   )
