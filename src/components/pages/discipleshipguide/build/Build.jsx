@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import FollowingJesus from './expandables/FollowingJesus'
 import FirstSteps from './expandables/FirstSteps'
+import Discovering from './expandables/Discovering'
 
 function Build({plusIcon, minusIcon}) {
-    const [isOpen, setIsOpen] = useState([false, false])
+    const [isOpen, setIsOpen] = useState([false, false, false])
 
     function handleClick(index) {
         setIsOpen(prevValues => {
@@ -30,6 +31,14 @@ function Build({plusIcon, minusIcon}) {
                 handleClick={() => handleClick(1)}
                 img={<img className='expandable-icon' src={isOpen[1] ? minusIcon : plusIcon}/>} 
             />
+
+            <Discovering
+                isOpen={isOpen[2]} 
+                handleClick={() => handleClick(2)}
+                img={<img className='expandable-icon' src={isOpen[2] ? minusIcon : plusIcon}/>} 
+            />
+
+            
         </div>
     </div>
   )

@@ -59,6 +59,13 @@
     text-align: center;
 }
 
+.send-wrapper {
+    padding-top: 10vh;
+}
 
-
+.send-wrapper > ul {
+    display: flex;
+    flex-direction: column;
+    gap: 3vh;
+}
 

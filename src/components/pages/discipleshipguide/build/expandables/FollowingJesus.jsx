@@ -10,7 +10,6 @@ function FollowingJesus(props) {
 
         <div className={props.isOpen ? 'expandable-content' : 'hide'}>
             <div className='content-text'>
-                <h4>Following Jesus</h4>
                 <p>Week 1 - The Authority of Jesus</p>
                 <p>Week 2 - The Death of Jesus</p>
                 <p>Week 3 - The Resurrection of Jesus</p>

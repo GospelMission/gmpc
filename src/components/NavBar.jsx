@@ -19,10 +19,10 @@ function NavBar() {
   <>
     <div className={isOpen ? 'hide' : ''}>
       <header>
-          <span className='website-name'>Logo Here</span>
+          <span className='website-name'>Gospel Mission Presbyterian Church</span>
           <button className='nav-btn' onClick={handleClick}><FaBars className='nav-icon'/></button>
           <nav className={isOpen ? 'nav-links' : 'hide'}>
-              <Link to="/" onClick={() => setIsOpen(false)}>Start Here</Link>
+              <Link to="/" onClick={() => setIsOpen(false)}>Home</Link>
               <Link to="/guide" onClick={() => setIsOpen(false)}>Discipleship Guide</Link>
           </nav>
       </header>
@@ -30,8 +30,8 @@ function NavBar() {
 
     <div className={isOpen ? 'mobile-nav-links' : 'hide'}>
         <nav>
-            <button className='nav-btn' onClick={handleClick}><FaTimes className='nav-icon'/></button>
-            <Link to="/" onClick={() => setIsOpen(false)}>Start Here</Link>
+            {/* <button className='nav-btn' onClick={handleClick}><FaTimes className='nav-icon'/></button> */}
+            <Link to="/" onClick={() => setIsOpen(false)}>Home</Link>
             <Link to="/guide" onClick={() => setIsOpen(false)}>Discipleship Guide</Link>
         </nav>
     </div>

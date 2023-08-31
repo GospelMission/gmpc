@@ -26,7 +26,7 @@ header {
 .mobile-nav-links {
     height: 100vh;
     width: auto;
-    
+
 }
 
 .mobile-nav-links > nav {
@@ -34,7 +34,26 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;    
+}
+
+.mobile-nav-links > nav > a {
+    display: flex;
+    justify-content: center;
     align-items: center;
-    gap: 5vh;
+    width: 100vw;
+    height: 10vh;
+    text-decoration: none;
+    color: inherit;
+    font-weight: bold;
+}
+
+.mobile-nav-links > nav > a:nth-child(odd) {
+    background-color: whitesmoke;
+}
+
+.mobile-nav-links > nav > a:nth-child(even) {
+    color: white;
+    background-color: black;
 }
 

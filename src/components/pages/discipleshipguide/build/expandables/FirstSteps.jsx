@@ -10,7 +10,6 @@ function FirstSteps(props) {
 
         <div className={props.isOpen ? 'expandable-content' : 'hide'}>
             <div className='content-text'>
-                <h4>First Steps</h4>
                 <p>Week 1 - Salvation as Work of God</p>
                 <p>Week 2 - A Life Pleasing to God</p>
                 <p>Week 3 - Listening to God</p>
@@ -22,7 +21,7 @@ function FirstSteps(props) {
                 <p>Download:</p>
                 <a 
                     target='_blank'
-                    href=''>
+                    href='https://drive.google.com/file/d/1V3D1fAirZSfOV58UemsLthuR_EfQIeVk/view?usp=drive_link'>
                     FirstSteps.pdf
                 </a>
             </div>
