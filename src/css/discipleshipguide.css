@@ -1,22 +1,22 @@
+.discipleship-guide {
+    text-align: center;
+}
+
 .win-wrapper {
     text-align: center;
-    padding-top: 5vh;
+    padding-top: 3vh;
 }
 
 .win-text {
     display: flex;
     flex-direction: column;
-    gap: 2vh;
+    gap: 3vh;
     font-weight: bold;
-    margin-bottom: 2vh;
+    margin-bottom: 4vh;
 }
 
-.win-text > span:nth-child(1) {
-    font-size: 2rem;
-}
-
-.win-text > span:nth-child(2) {
-    font-size: 2rem;
+.win-text > *{
+    margin: 0;
 }
 
 .expandable-wrapper {
@@ -47,8 +47,18 @@
 .content-text {
     display: flex;
     flex-direction: column; 
-    height: 100%;
+
 }
+
+.build-wrapper {
+    margin-top: 10vh;
+    text-align: start;
+}
+
+.build-text {
+    text-align: center;
+}
+
 
 
 

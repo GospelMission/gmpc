@@ -4,7 +4,7 @@ function Ebanghelyo(props) {
   return (
     <>  
         <div className='expandable-title white' onClick={props.handleClick}>
-            <span>Ang Tanging Katotohanan</span>
+            <p>Ang Tanging Katotohanan</p>
             {props.img}
         </div>
 

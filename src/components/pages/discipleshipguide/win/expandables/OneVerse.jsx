@@ -4,7 +4,7 @@ function OneVerse(props) {
   return (
     <>  
         <div className='expandable-title whitesmoke' onClick={props.handleClick}>
-            <span>One Verse Evangelism </span>
+            <p>One Verse Evangelism </p>
             {props.img}
         </div>
 

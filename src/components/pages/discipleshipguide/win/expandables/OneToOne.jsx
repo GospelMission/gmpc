@@ -4,19 +4,18 @@ function OneToOne(props) {
   return (
     <>  
         <div className='expandable-title whitesmoke' onClick={props.handleClick}>
-            <span>One to One </span>
+            <p>One to One </p>
             {props.img}
         </div>
 
         <div className={props.isOpen ? 'expandable-content' : 'hide'}>
             <div className='content-text'>
-              <span>Download: 
-                <a 
+              <span>Download:</span>
+              <a 
                   target='_blank'
                   href='https://drive.google.com/file/d/1LD-aUwqx9zALfmC91NEpN6s53e90Pgp6/view?usp=drive_link'>
-                  One to One
+                  OnetoOne.pdf
                 </a>
-              </span>
             </div>
         </div>
 
