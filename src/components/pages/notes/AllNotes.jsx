@@ -1,6 +1,6 @@
 import React from 'react'
 import NoteCard from './NoteCard';
-import PlusIcon from "../../../images/PlusIcon.png";
+import PlusIcon from "../../../images/plusIcon.png";
 
 function AllNotes(props) {
     const noteCards = props.notes.map(note => {
