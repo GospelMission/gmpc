@@ -1,0 +1,47 @@
+.slider-wrapper {
+    display: flex;
+    height: 75vh;
+    width: auto;
+    justify-content: center;
+    text-align: center;
+}
+
+.slider-content {
+    display: flex;
+    align-items: center;
+}
+
+
+.btn-slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 15vh;
+    width: 10vw;
+    color: white;
+    visibility: hidden;
+}
+
+.btn-slider.visible {
+    visibility: visible; /* Make the button visible when needed */
+}
+
+.icon-slider {
+    height: 25%;
+}
+
+.slider-title {
+    color: white;
+    font-size: 5vh;
+}
+
+.slider-view-btn {
+    color: white;
+    border-radius: 5px;
+    padding: 5vh;
+    font-size: large;
+    background-color: black;
+    border: none;
+    cursor: pointer;
+}
+  

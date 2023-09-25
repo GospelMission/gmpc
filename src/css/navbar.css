@@ -1,9 +1,19 @@
+.navbar-wrapper {
+    padding: 0 3vw;
+}
+
 header {
     display: flex;
     flex-direction: row;
+    align-items: center;
     justify-content: space-between;
     height: 7vh;
     padding: 2vh 0;
+}
+
+.website-logo {
+    height: 5vh;
+    width: auto;
 }
 
 .website-name {
@@ -19,7 +29,7 @@ header {
 }
 
 .nav-icon {
-    height: 3vh;
+    height: 5vh;
     width: auto;
 }
 
@@ -50,10 +60,21 @@ header {
 }
 
 .mobile-nav-links > nav > a:nth-child(odd) {
-    background-color: whitesmoke;
+    background-color: white;
 }
 
 .mobile-nav-links > nav > a:nth-child(even) {
     background-color: white;
 }
 
+.start-membership-btn {
+    margin-left: 25%; 
+    height: 75%s;
+    color: white;
+    font-weight: bold;
+    font-size: 0.5em;
+    padding: 2.5vw;
+    border-radius: 5px;
+    background-color: #2CAEBF;
+    border: none;
+}

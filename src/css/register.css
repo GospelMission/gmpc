@@ -1,0 +1,14 @@
+.register-wrapper {
+    display: flex;
+    justify-content: center;
+    height: 50vh;
+    width: auto;
+}
+
+.register-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1vh
+}
