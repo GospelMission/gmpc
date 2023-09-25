@@ -68,13 +68,14 @@ header {
 }
 
 .start-membership-btn {
-    margin-left: 25%; 
+    margin-left: auto;
+    margin-right: 3vw; 
     height: 75%s;
     color: white;
     font-weight: bold;
-    font-size: 0.5em;
-    padding: 2.5vw;
-    border-radius: 5px;
+    font-size: 2vh;
+    padding: 2vh;
+    border-radius: 10px;
     background-color: #2CAEBF;
     border: none;
     box-shadow: 0 1px 0 rgb(0 0 0 / 0.2);
