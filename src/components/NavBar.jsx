@@ -57,7 +57,7 @@ function NavBar() {
       </header>
     </div>
 
-    <div className={isOpen ? 'mobile-nav-links' : 'hide'}>
+    <div className={isOpen ? 'mobile-nav-links animation' : 'hide'}>
         <nav>
             <Link to="/" onClick={() => setIsOpen(false)}>Home</Link>
             <Link to="/guide" onClick={() => setIsOpen(false)}>Discipleship Guide</Link>

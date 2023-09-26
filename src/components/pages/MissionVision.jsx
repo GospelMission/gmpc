@@ -2,7 +2,7 @@ import React from 'react'
 
 function MissionVision() {
   return (
-    <div className='mission-vision-wrapper'>
+    <div className='mission-vision-wrapper animation  '>
       <h1>GOSPEL MISSION CHURCH(GMC) MISSION AND VISION</h1>
       <h2>Our Mission Statement – “Win, Build, Send” </h2>
       <p>We believe that our relationship with God is illustrated by the Great Commandment found in Matthew 22:37-40.  This commandment is summarized with the statement “Loving God, Loving People.”</p>

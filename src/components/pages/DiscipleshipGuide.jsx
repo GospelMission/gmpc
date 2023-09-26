@@ -8,7 +8,7 @@ import Send from './discipleshipguide/send/Send'
 function DiscipleshipGuide() {
   return (
     <>  
-    <div className='discipleship-wrapper'>  
+    <div className='discipleship-wrapper animation'>  
         <h1 className='discipleship-guide'>DISCIPLESHIP GUIDE</h1>
         <Win plusIcon={plusIcon} minusIcon={minusIcon}/>
         <Build plusIcon={plusIcon} minusIcon={minusIcon}/>
