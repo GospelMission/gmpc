@@ -10,6 +10,7 @@ import './css/register.css'
 import './css/login.css'
 import './css/notecard.css'
 import './css/slider.css'
+import './css/missionvision.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     <HashRouter>

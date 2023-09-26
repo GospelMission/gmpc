@@ -31,23 +31,28 @@ function ImageSlider({ sliders }) {
 
   return (
     <>
-        <div key={Math.random()} className='slider-wrapper' style={sliderStyles}>
-            <div className="slider-content">
-                <div className={`btn-slider ${currentIndex > 0 ? 'visible' : ''}`} onClick={(e) => {e.stopPropagation(); goToPrevious()}}>
-                    <FontAwesomeIcon className="icon-slider" icon={faAngleLeft} fade/>
-                </div>
+    <div className='slider-wrapper'>
+        <div className={`btn-slider-arrow slider-left-arrow ${currentIndex > 0 ? 'visible' : ''}`} onClick={(e) => {e.stopPropagation(); goToPrevious()}}>
+            <FontAwesomeIcon className="icon-slider-arrow" icon={faAngleLeft} fade/>
+        </div>
 
+        <div key={Math.random()} className='slider-image' style={sliderStyles}>
+
+            <div className="slider-content">
                 <div className="slider-title animation">
                     <h1>{sliders[currentIndex].title}</h1>
-                    <button className='slider-view-btn' onClick={navigateToPath}>View {sliders[currentIndex].title}</button>
                 </div>
-                
-                <div className={`btn-slider ${currentIndex < sliders.length - 1 ? 'visible' : ''}`} onClick={(e) => {e.stopPropagation(); goToNext()}}>
-                    <FontAwesomeIcon className="icon-slider" icon={faAngleRight} fade/>
-                </div>
-          
+                <button className='slider-view-btn' onClick={navigateToPath}>View {sliders[currentIndex].title}</button>
             </div>
         </div>
+
+        <div className={`btn-slider-arrow slider-right-arrow ${currentIndex < sliders.length - 1 ? 'visible' : ''}`} onClick={(e) => {e.stopPropagation(); goToNext()}}>
+                    <FontAwesomeIcon className="icon-slider-arrow" icon={faAngleRight} fade/>
+        </div>
+    </div>
+
+
+
     </>
 
   )
