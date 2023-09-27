@@ -1,9 +1,9 @@
 .slider-image {
     display: flex;
     background-color: red;   
+    justify-content: center;
     align-items: center;
     text-align: center;
-    justify-content: center;
     flex-direction: column;
     border-radius: 4vw;
     box-shadow: 0px 6px 15px gray;
@@ -49,6 +49,29 @@
 
 .icon-slider-arrow {
     height: 25%;
+}
+
+.fa-circle, .fa-circle-dot {
+    color: white;
+}
+
+.slider-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    margin-top: 10%;
+}
+
+.carousel {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 5%;
+    margin-top: auto;
+    gap: 2%;
 }
 
 @media only screen and (max-width: 768px) {

@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import { useNavigate } from "react-router-dom"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
+import { faAngleLeft, faAngleRight} from "@fortawesome/free-solid-svg-icons"
+import { faCircle, faCircleDot } from "@fortawesome/free-regular-svg-icons";
 
 function ImageSlider({ sliders }) {
     const navigate = useNavigate()
@@ -18,6 +19,21 @@ function ImageSlider({ sliders }) {
             setCurrentIndex(prevIndex => prevIndex + 1)
         } 
     }
+
+    const carousels = sliders.map((slider, index)=> {
+        function handleClick() {
+            setCurrentIndex(index)
+        }
+
+        return(
+                <FontAwesomeIcon key={index}
+                    onClick={() => handleClick()} 
+                    icon={currentIndex == index ? faCircleDot : faCircle} 
+                    size='sm' 
+                    fade={currentIndex == index ? true : false}
+                />     
+        )
+    })
 
     const navigateToPath = () => {
         navigate(sliders[currentIndex].path);
@@ -44,14 +60,15 @@ function ImageSlider({ sliders }) {
                 </div>
                 <button className='slider-view-btn' onClick={navigateToPath}>View {sliders[currentIndex].title}</button>
             </div>
+            <div className='carousel'>
+                {carousels}
+            </div>
         </div>
 
         <div className={`btn-slider-arrow btn-slider-arrow-right ${currentIndex < sliders.length - 1 ? 'visible' : ''}`} onClick={(e) => {e.stopPropagation(); goToNext()}}>
                     <FontAwesomeIcon className="icon-slider-arrow icon-slider-arrow-right" icon={faAngleRight} fade/>
-        </div>
+        </div>       
     </div>
-
-
 
     </>
 
