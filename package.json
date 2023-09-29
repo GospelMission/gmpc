@@ -24,7 +24,8 @@
     "react-icons": "^4.10.1",
     "react-router-dom": "^6.15.0",
     "react-scroll": "^1.8.9",
-    "save-dev": "^0.0.1-security"
+    "save-dev": "^0.0.1-security",
+    "swiper": "^10.3.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",

@@ -1,17 +1,20 @@
 .slider-image {
     display: flex;
-    background-color: red;   
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;  
     text-align: center;
-    flex-direction: column;
-    border-radius: 4vw;
-    box-shadow: 0px 6px 15px gray;
+    height: 89vh;
+    border-radius: 0vw;
 }
 
-.slider-wrapper {
-    padding-top: 3vh;
+.slider-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
 }
+
 
 .slider-title {
     color: white;
@@ -33,82 +36,11 @@
     cursor: pointer;
 }
 
-.btn-slider-arrow {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 15vh;
-    width: 10vw;
-    visibility: hidden;
-}
-
-
-.btn-slider-arrow.visible {
-    visibility: visible; /* Make the button visible when needed */
-}
-
-.icon-slider-arrow {
-    height: 25%;
-}
-
-.fa-circle, .fa-circle-dot {
-    color: white;
-}
-
-.slider-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    margin-top: 10%;
-}
-
-.carousel {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    margin-bottom: 5%;
-    margin-top: auto;
-    gap: 2%;
-}
 
 @media only screen and (max-width: 768px) {
-    .slider-wrapper {
-        display: grid;
-        padding: 1.5vw;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: 73vh 10vh;
-    }
 
-    .slider-image {
-        grid-column: 1/3;
-    }
-
-    .btn-slider-arrow-left {
-        order: 2;
-        width: 100%;
-    }
-
-    .btn-slider-arrow-right{
-        order: 3;
-        width: 100%;
-    }
 }
 
 @media only screen and (min-width: 768px) {
-    .slider-wrapper {
-        display: flex;
-        height: 75vh;
-        justify-content: space-evenly;
-    }
-    .slider-image {
-        flex-basis: 70%;
-    }
 
-    .btn-slider-arrow {
-        flex-basis: 15%;
-        align-self: center;
-    }
 }

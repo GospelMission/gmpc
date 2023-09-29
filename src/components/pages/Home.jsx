@@ -3,7 +3,6 @@ import ImageSlider from './home/ImageSlider'
 import DGGuideImg from '../../images/guideImg.jpg'
 import MissionVisionImg from '../../images/missionvisionImg.jpg'
 import NotesImg from '../../images/notesImg.jpg'
-import NavBar from '../NavBar.jsx'
 
 function Home() {
   const sliders = [
@@ -12,10 +11,15 @@ function Home() {
     {title:"Notes Application", path: "/notesapp", url: NotesImg},
   ]
 
+
   return (
-    <div className='home-wrapper'>
-      <ImageSlider sliders={sliders} />
-    </div>
+    <>
+      <div className='home-wrapper'>
+        <ImageSlider sliders={sliders} />
+      </div>
+    </>
+
+
   )
 }
 
