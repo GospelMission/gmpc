@@ -19,7 +19,7 @@ export const findAllNotesById = (jwtToken, userId) => {
         if (response.ok) {
           return response.json();
         } else {
-          return console.error('Response is not okay.');
+          return console.error('FindAllNotes response is not okay.');
         }
       })
       .then(data => data.data)

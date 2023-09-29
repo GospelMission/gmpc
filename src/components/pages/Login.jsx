@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from "react-router-dom"
 import Validation from "../Validation"
+import { login } from '../../services/login'
 
 function Login(props) {
     const navigate = useNavigate()
@@ -34,32 +35,17 @@ function Login(props) {
         const isFormDataComplete = Object.values(validationErrors).every(error => error === "");
 
         if (isFormDataComplete) {
-            const basicAuthHeader =
-                'Basic ' + btoa(formData.email + ':' + formData.password);
-            const response = await fetch(
-                'http://localhost:8080/api/v1/users/login',
-                {
-                    method: 'POST',
-                    headers: {
-                        'Authorization': basicAuthHeader,
-                        'Content-Type': 'application/json',
-                    },
-                }
-            );
-            if (response.ok) {
+            login(formData.email, formData.password)
+            .then(data => {
                 props.handleLoginSuccess();
-                const data = await response.json(); // 
-                const jwtToken = data.data.token;
+                const jwtToken = data.token;
                 sessionStorage.setItem('jwtToken', jwtToken);
                 navigate('/notesapp')
-            } else {
-                setErrors(prevErrors => ({
-                    ...prevErrors,
-                    others: "Bad Credentials"
-                }))
+            })
+            .catch(error => {
                 sessionStorage.clear()
-                console.error('Bad Credentials.');
-            }
+                console.error(error.message)
+            })
         }
     }
 
