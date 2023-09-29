@@ -2,20 +2,25 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom"
 import AllNotes from './notes/AllNotes';
 import NoteById from './notes/NoteById';
+import { findAllNotesById } from '../../services/findAllNotesById';
+import { createNoteByEmail } from '../../services/createNoteByEmail';
+import { deleteNoteById } from '../../services/deleteNoteById';
 
 function NotesApplication() {
     const navigate = useNavigate()
     const jwtToken = sessionStorage.getItem('jwtToken');
-    let decodedToken
-    let userId
-    let userEmail
+    const [userId, setUserId] = useState()
+    const [userEmail, setUserEmail] = useState()
+    const [noteId, setNoteId] = useState()
+    const [notes, setNotes] = useState([])
+    const [isOpen, setIsOpen] = useState(false)
 
     useEffect(() => {
         if (jwtToken) {
             try {
-                decodedToken = JSON.parse(atob(jwtToken.split('.')[1]));
-                userId = decodedToken.userId
-                userEmail = decodedToken.sub
+                const decodedToken = JSON.parse(atob(jwtToken.split('.')[1]));
+                setUserId(decodedToken.userId)
+                setUserEmail(decodedToken.sub)
             } catch (error) {
                 console.error('Error decoding JWT token:', error);
                 sessionStorage.clear();
@@ -24,46 +29,20 @@ function NotesApplication() {
         } else navigate('/login');
     }, [])
 
-    const [noteId, setNoteId] = useState()
-    const [notes, setNotes] = useState([])
-    const [isOpen, setIsOpen] = useState(false)
-
     const fetchNotes = () => {
-        if (jwtToken && userId) {
-            fetch(`http://localhost:8080/api/v1/notes/findAllById/${userId}`, {
-                method: 'GET',
-                headers: {
-                    'Authorization': `Bearer ${jwtToken}`,
-                    'Content-Type': 'application/json',
-                },
+        if(jwtToken && userId) {
+            findAllNotesById(jwtToken, userId)
+            .then(data => {
+                setNotes(data);
             })
-                .then(response => {
-                    if (response.ok) {
-                        return response.json();
-                    } else {
-                        console.error('Response is not okay.');
-                    }
-                })
-                .then(data => {
-                    setNotes(data.data);
-                })
-                .catch(error => {
-                    console.error(error.message);
-                    sessionStorage.clear();
-                    navigate('/login');
-                });
+            .catch(error => {
+                console.error(error.message);
+            });
         }
     };
 
     function createNote() {
-        fetch(`http://localhost:8080/api/v1/notes/create/${userEmail}`, {
-            method: 'POST',
-            headers: {
-                'Authorization': `Bearer ${jwtToken}`,
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({"title" : "New Note", "description" : "",}),
-        })
+        createNoteByEmail(jwtToken, userEmail, notes.length)
         .then(() => fetchNotes())
         .catch(error => {
             console.error(error.message)
@@ -71,17 +50,10 @@ function NotesApplication() {
     }
 
     function deleteNote(noteId) {
-
-        fetch(`http://localhost:8080/api/v1/notes/delete/${noteId}`, {
-            method: 'DELETE',
-            headers: {
-                'Authorization': `Bearer ${jwtToken}`,
-                'Content-Type': 'application/json',
-            },
-        })
+        deleteNoteById(jwtToken, noteId)
         .then(() => {
-            setIsOpen(prevState => !prevState)
             fetchNotes()
+            setIsOpen(prevState => !prevState)
         })
         .catch(error => {
             console.error(error.message)
@@ -116,3 +88,45 @@ function NotesApplication() {
 }
 
 export default NotesApplication
+
+    // const fetchNotes = () => {
+    //     if (jwtToken && userId) {
+    //         fetch(`http://localhost:8080/api/v1/notes/findAllById/${userId}`, {
+    //             method: 'GET',
+    //             headers: {
+    //                 'Authorization': `Bearer ${jwtToken}`,
+    //                 'Content-Type': 'application/json',
+    //             },
+    //         })
+    //             .then(response => {
+    //                 if (response.ok) {
+    //                     return response.json();
+    //                 } else {
+    //                     console.error('Response is not okay.');
+    //                 }
+    //             })
+    //             .then(data => {
+    //                 setNotes(data.data);
+    //             })
+    //             .catch(error => {
+    //                 console.error(error.message);
+    //                 sessionStorage.clear();
+    //                 navigate('/login');
+    //             });
+    //     }
+    // };
+
+    // function createNote() {
+    //     fetch(`http://localhost:8080/api/v1/notes/create/${userEmail}`, {
+    //         method: 'POST',
+    //         headers: {
+    //             'Authorization': `Bearer ${jwtToken}`,
+    //             'Content-Type': 'application/json',
+    //         },
+    //         body: JSON.stringify({"title" : "New Note", "description" : "",}),
+    //     })
+    //     .then(() => fetchNotes())
+    //     .catch(error => {
+    //         console.error(error.message)
+    //     })
+    // }
