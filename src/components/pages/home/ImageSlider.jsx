@@ -10,7 +10,6 @@ import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import 'swiper/css/scrollbar'
-import 'swiper/css/effect-fade';
 
 function ImageSlider({ sliders }) {
     const navigate = useNavigate()
@@ -19,20 +18,17 @@ function ImageSlider({ sliders }) {
 
         <Swiper 
             style={{
-
                 "--swiper-pagination-bullet-inactive-color": "#FFFFFF",
                 "--swiper-pagination-bullet-inactive-opacity": "1",
                 "--swiper-pagination-bullet-size": "11px",
                 }}
-            modules={[EffectFade, Navigation, Pagination]}
-            effect={'fade'}
-            spaceBetween={50}
+            modules={[Navigation, Pagination]}
+            spaceBetween={0}
             slidesPerView={1}
             navigation
             pagination={{
                 dynamicBullets: true,
             }}
-            className="mySwiper"
         >
         {sliders.map((slider) => {
             const sliderStyles = {
@@ -41,7 +37,7 @@ function ImageSlider({ sliders }) {
                 backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${slider.url})`,
             }
             return(
-                <SwiperSlide key={Math.random()}>
+                <SwiperSlide key={Math.random()} className='slider-wrapper'>
                     <div className='slider-image animation' style={sliderStyles}>
                         <div className="slider-content">
                             <div className="slider-title animation">
