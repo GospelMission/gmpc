@@ -2,9 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom"
 import AllNotes from './notes/AllNotes';
 import NoteById from './notes/NoteById';
-import { findAllNotesById } from '../../services/findAllNotesById';
-import { createNoteByEmail } from '../../services/createNoteByEmail';
-import { deleteNoteById } from '../../services/deleteNoteById';
+import notesService from '../../services/notesService';
 
 function NotesApplication() {
     const navigate = useNavigate()
@@ -31,7 +29,7 @@ function NotesApplication() {
 
     const fetchNotes = () => {
         if(jwtToken && userId) {
-            findAllNotesById(jwtToken, userId)
+            notesService.findAllNotesById(jwtToken, userId)
             .then(data => {
                 setNotes(data);
             })
@@ -42,7 +40,7 @@ function NotesApplication() {
     };
 
     function createNote() {
-        createNoteByEmail(jwtToken, userEmail, notes.length)
+        notesService.createNoteByEmail(jwtToken, userEmail, notes.length)
         .then(() => fetchNotes())
         .catch(error => {
             console.error(error.message)
@@ -50,7 +48,7 @@ function NotesApplication() {
     }
 
     function deleteNote(noteId) {
-        deleteNoteById(jwtToken, noteId)
+        notesService.deleteNoteById(jwtToken, noteId)
         .then(() => {
             fetchNotes()
             setIsOpen(prevState => !prevState)

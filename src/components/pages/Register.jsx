@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from "react-router-dom"
 import Validation from "../Validation"
-import { signup } from '../../services/signup';
-import { login } from '../../services/login';
+import notesService from '../../services/notesService'
 
 function Register(props) {
     const navigate = useNavigate();
@@ -34,9 +33,9 @@ function Register(props) {
 
         if (isFormDataComplete) {
             const formDataJSON = JSON.stringify(formData);
-            signup(formDataJSON)
+            notesService.signup(formDataJSON)
             .then( async() => {
-                login(formData.email, formData.password)
+                notesService.login(formData.email, formData.password)
                 .then(data => {
                     props.handleLoginSuccess();
                     const jwtToken = data.token;

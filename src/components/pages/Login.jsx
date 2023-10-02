@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from "react-router-dom"
 import Validation from "../Validation"
-import { login } from '../../services/login'
+import notesService from '../../services/notesService'
 
 function Login(props) {
     const navigate = useNavigate()
@@ -35,7 +35,7 @@ function Login(props) {
         const isFormDataComplete = Object.values(validationErrors).every(error => error === "");
 
         if (isFormDataComplete) {
-            login(formData.email, formData.password)
+            notesService.login(formData.email, formData.password)
             .then(data => {
                 props.handleLoginSuccess();
                 const jwtToken = data.token;

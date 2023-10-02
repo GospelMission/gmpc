@@ -1,15 +1,16 @@
 import React, { useState } from 'react'
 import { useNavigate } from "react-router-dom"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleLeft, faAngleRight} from "@fortawesome/free-solid-svg-icons"
-import { faCircle, faCircleDot } from "@fortawesome/free-regular-svg-icons";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faAngleLeft, faAngleRight} from "@fortawesome/free-solid-svg-icons"
+// import { faCircle, faCircleDot } from "@fortawesome/free-regular-svg-icons";
 
-import { Navigation, Pagination, EffectFade} from 'swiper/modules';
+import { Navigation, Pagination, Keyboard} from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import 'swiper/css/scrollbar'
+import 'swiper/css/keyboard'
 
 function ImageSlider({ sliders }) {
     const navigate = useNavigate()
@@ -22,11 +23,15 @@ function ImageSlider({ sliders }) {
                 "--swiper-pagination-bullet-inactive-opacity": "1",
                 "--swiper-pagination-bullet-size": "11px",
                 }}
-            modules={[Navigation, Pagination]}
+            modules={[Navigation, Pagination, Keyboard]}
             spaceBetween={0}
             slidesPerView={1}
             navigation
+            keyboard={{
+                keyboard: true,
+            }}
             pagination={{
+                clickable: true,
                 dynamicBullets: true,
             }}
         >
