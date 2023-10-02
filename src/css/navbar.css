@@ -15,6 +15,7 @@ header {
 .website-logo {
     height: 6vh;
     width: auto;
+    cursor: pointer;
 }
 
 .start-membership-btn {
@@ -30,6 +31,7 @@ header {
     border: none;
     box-shadow: 0 2px 0 rgb(0 0 0 / 0.2);
     display: none;
+    cursor: pointer;
 }
 
 .nav-btn {
